@@ -36,3 +36,9 @@ document.querySelectorAll('.copy__btn').forEach(function (b) {
   }, { rootMargin: '-40% 0px -55% 0px' });
   Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
 })();
+
+// На телефоне прокрутить меню к текущему разделу
+(function () {
+  var m = document.querySelector('.menu'), on = m && m.querySelector('.is-on');
+  if (m && on && m.scrollWidth > m.clientWidth) m.scrollLeft = on.offsetLeft - (m.clientWidth - on.offsetWidth) / 2;
+})();

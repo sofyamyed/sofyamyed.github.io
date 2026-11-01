@@ -16,6 +16,7 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;backgroun
 /* top bar */
 .top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:15px}
 .top__brand{font:700 15px var(--head);color:var(--ink);text-decoration:none;letter-spacing:.01em}
+.top__links{display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end}
 .top__link{color:var(--muted);text-decoration:none}
 .top__link:hover{color:var(--accent)}
 
@@ -137,4 +138,18 @@ footer{padding:20px 0 48px;text-align:center;font-size:14px;color:var(--muted)}
   .final{padding:32px 20px}
   .table th,.table td{padding:10px 8px}
   .btn{width:100%;justify-content:center}
+  .top{align-items:flex-start}
+  .top__links{flex-direction:column;align-items:flex-end;gap:4px;font-size:14px}
+}
+
+/* site menu */
+.top{gap:24px}
+.menu{position:relative;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.menu::-webkit-scrollbar{display:none}
+.menu a{flex:none;color:var(--muted);text-decoration:none;font-size:14px;font-weight:700;padding:8px 13px;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s}
+.menu a:hover{background:var(--accent-soft);color:var(--accent)}
+.menu a.is-on{background:var(--accent);color:var(--on-dark)}
+@media (max-width:980px){
+  .top{flex-direction:column;align-items:flex-start;gap:10px}
+  .menu{width:100%;max-width:100%}
 }
